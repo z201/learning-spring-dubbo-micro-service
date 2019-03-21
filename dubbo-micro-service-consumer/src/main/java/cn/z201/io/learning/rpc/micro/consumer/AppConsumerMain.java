@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.stereotype.Controller;
 
 /**
  * @author z201.coding@gmail.com
@@ -17,6 +18,7 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource(value = {
         "classpath:dubbo-consumer.xml"
 })
+@Controller
 public class AppConsumerMain {
 
     public static void main(String[] args) {
@@ -24,14 +26,6 @@ public class AppConsumerMain {
         SpringApplication.run(AppConsumerMain.class, args);
     }
 
-    @Autowired
-    private DefaultDemoServiceI defaultDemoService;
 
-    @Bean
-    public ApplicationRunner runner() {
-        return args -> {
-            log.info(defaultDemoService.sayHello("consumer"));
-        };
-    }
 
 }
