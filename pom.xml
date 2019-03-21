@@ -22,8 +22,8 @@
     <modules>
         <module>dubbo-micro-service-consumer</module>
         <module>dubbo-micro-service-provider</module>
-        <module>spring-dubbo-micro-service-zookeeper</module>
-        <module>spring-dubbo-micro-service-api</module>
+        <module>dubbo-micro-service-zookeeper</module>
+        <module>dubbo-micro-service-api</module>
     </modules>
 
     <build>

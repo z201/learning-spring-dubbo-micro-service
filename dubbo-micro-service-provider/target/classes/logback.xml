@@ -8,6 +8,8 @@
         </encoder>
     </appender>
 
+    <logger name="com.alibaba.dubbo" level="INFO"/>
+
     <root level="info">
         <appender-ref ref="STDOUT" />
     </root>

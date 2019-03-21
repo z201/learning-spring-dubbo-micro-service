@@ -1,4 +1,0 @@
-embedded:
-  zookeeper:
-    port: 2181
-
