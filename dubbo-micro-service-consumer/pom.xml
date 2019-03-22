@@ -36,6 +36,11 @@
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-actuator</artifactId>-->
+        <!--</dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -64,15 +69,22 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
-            <version>1.7.25</version>
+            <version>${slf4j.version}</version>
         </dependency>
 
-        <!-- Dubbo Spring Boot Starter -->
+        <!-- Dubbo Spring Boot Starter  -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
             <version>${dubbo.version}</version>
         </dependency>
+
+        <!-- Dubbo Actuator Starter 这玩意要配合 spring boot actuator一起使用-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.dubbo</groupId>-->
+            <!--<artifactId>dubbo-spring-boot-actuator</artifactId>-->
+            <!--<version>${dubbo.version}</version>-->
+        <!--</dependency>-->
 
         <!-- 排除掉 zkclient 、Zookeeper、 dubbo log4j 使用slf4j -->
         <dependency>
