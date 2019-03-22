@@ -37,7 +37,6 @@ public class ApiController {
         try {
             defaultDemoService.error();
         } catch (Exception e) {
-            Throwable throwable = e.getCause();
             if (e instanceof UndeclaredThrowableException) {
                 Throwable targetEx = ((UndeclaredThrowableException) e).getUndeclaredThrowable();
                 if (targetEx != null) {

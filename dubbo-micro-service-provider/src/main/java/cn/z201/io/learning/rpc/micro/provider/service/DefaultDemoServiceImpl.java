@@ -53,6 +53,6 @@ public class DefaultDemoServiceImpl implements DefaultDemoServiceI {
 
     @Override
     public String error()  {
-        throw new RpcException("假装一个异常");
+        throw new RpcException(0,"假装一个异常");
     }
 }
