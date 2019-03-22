@@ -19,3 +19,15 @@ spring:
     restart:
       enabled: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+dubbo:
+  application:
+    name: ${spring.name}
+  registry: ## Dubbo Registry
+    address: zookeeper://127.0.0.1:2181
+    timeout: 3000
