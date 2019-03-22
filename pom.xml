@@ -15,6 +15,9 @@
     <packaging>pom</packaging>
     <properties>
         <slf4j.version>1.7.25</slf4j.version>
+        <dubbo.version>2.6.5</dubbo.version>
+        <curator.version>2.8.0</curator.version>
+        <netty.version>4.1.32.Final</netty.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
