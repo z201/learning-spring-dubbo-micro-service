@@ -47,13 +47,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 排除掉 zkclient 、Zookeeper、 dubbo log4j 使用slf4j -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo</artifactId>

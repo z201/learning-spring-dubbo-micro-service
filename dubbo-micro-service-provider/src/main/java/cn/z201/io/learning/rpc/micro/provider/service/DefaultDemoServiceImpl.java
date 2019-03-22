@@ -17,19 +17,23 @@
 package cn.z201.io.learning.rpc.micro.provider.service;
 
 import cn.z201.io.api.DefaultDemoServiceI;
+import cn.z201.io.dto.PersionDTO;
 import org.apache.dubbo.config.annotation.Service;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Value;
+
+import java.sql.Time;
+import java.sql.Timestamp;
 
 
 /**
  * Default {@link DefaultDemoServiceImpl}
- *
- * @author zengqingfeng
+ * @author z201.coding@gmail.com
  * @see DefaultDemoServiceImpl
  * @since 2.7.0
  */
-@Service(version = "1.0.0")
-public class DefaultDemoServiceImpl implements DefaultDemoServiceI{
+@Service(version = "1.0.0" ,group = "demo")
+public class DefaultDemoServiceImpl implements DefaultDemoServiceI {
     /**
      * The default value of ${dubbo.application.name} is ${spring.application.name}
      */
@@ -37,7 +41,12 @@ public class DefaultDemoServiceImpl implements DefaultDemoServiceI{
     private String serviceName;
 
     @Override
-    public String sayHello(String name) {
+    public String say(String name) {
         return String.format("[%s] : Hello, %s", serviceName, name);
     }
+
+    @Override
+    public PersionDTO sayConsumer(String name, Integer age) {
+        return new PersionDTO(serviceName+" : "+age.toString(), new Timestamp(System.currentTimeMillis()));
+}
 }

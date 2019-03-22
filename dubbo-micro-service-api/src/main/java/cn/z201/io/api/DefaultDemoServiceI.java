@@ -16,6 +16,8 @@
  */
 package cn.z201.io.api;
 
+import cn.z201.io.dto.PersionDTO;
+
 /**
  * Demo Service interface
  *
@@ -25,10 +27,18 @@ package cn.z201.io.api;
 public interface DefaultDemoServiceI {
 
     /**
-     * 测试
+     * 测试字符串
      * @param name
      * @return
      */
-    String sayHello(String name);
+    String say(String name);
+
+    /**
+     * 测试多参数
+     * @param name
+     * @param age
+     * @return
+     */
+    PersionDTO sayConsumer(String name , Integer age);
 
 }
