@@ -38,7 +38,7 @@ hs_err_pid*
 
 #maven
 target
-
+/target/
 
 #Other
 logs/
