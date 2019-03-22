@@ -1,6 +1,0 @@
-spring:
-  name: dubbo-spring-boot-starter
-  devtools:
-    restart:
-      enabled: true
-
