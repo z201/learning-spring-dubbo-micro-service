@@ -1,0 +1,6 @@
+关于注册中心,需外单独下载并运行。
+https://nacos.io/zh-cn/docs/quick-start.html
+参考文档下载并运行
+初始化登录
+账号：nacos
+密码：nacos
