@@ -25,7 +25,6 @@
     <modules>
         <module>dubbo-micro-service-consumer</module>
         <module>dubbo-micro-service-provider</module>
-        <module>dubbo-micro-service-zookeeper</module>
         <module>dubbo-micro-service-api</module>
     </modules>
 
