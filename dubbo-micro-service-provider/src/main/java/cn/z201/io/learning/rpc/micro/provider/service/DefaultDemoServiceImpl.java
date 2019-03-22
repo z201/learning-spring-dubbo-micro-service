@@ -17,6 +17,7 @@
 package cn.z201.io.learning.rpc.micro.provider.service;
 
 import cn.z201.io.api.DefaultDemoServiceI;
+import com.alibaba.dubbo.rpc.RpcContext;
 import org.springframework.beans.factory.annotation.Value;
 
 
@@ -37,6 +38,12 @@ public class DefaultDemoServiceImpl implements DefaultDemoServiceI{
 
     @Override
     public String sayHello(String name) {
-        return String.format("[%s] : Hello, %s", serviceName, name);
+        RpcContext rpcContext = RpcContext.getContext();
+        return String.format("Service [name :%s , port : %d] %s(\"%s\") : Hello,%s",
+                serviceName,
+                rpcContext.getLocalPort(),
+                rpcContext.getMethodName(),
+                name,
+                name);
     }
 }
