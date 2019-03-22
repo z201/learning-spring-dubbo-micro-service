@@ -17,6 +17,7 @@
 package cn.z201.io.api;
 
 import cn.z201.io.dto.PersionDTO;
+import org.apache.dubbo.rpc.RpcException;
 
 /**
  * Demo Service interface
@@ -31,7 +32,7 @@ public interface DefaultDemoServiceI {
      * @param name
      * @return
      */
-    String say(String name);
+    String say(String name) throws RpcException;
 
     /**
      * 测试多参数
@@ -39,6 +40,13 @@ public interface DefaultDemoServiceI {
      * @param age
      * @return
      */
-    PersionDTO sayConsumer(String name , Integer age);
+    PersionDTO sayConsumer(String name , Integer age) throws RpcException;
+
+    /**
+     * 抛出一个异常
+     * @return
+     * @throws RpcException
+     */
+    String error() throws RpcException;
 
 }

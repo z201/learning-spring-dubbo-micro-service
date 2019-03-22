@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
  **/
 @EnableAutoConfiguration
 @Slf4j
-@ComponentScan("cn.z201.io.learning.rpc.micro.consumer")
+@ComponentScan({"cn.z201.io.learning.rpc.micro.consumer"})
 public class AppConsumerMain {
 
     public static void main(String[] args) {

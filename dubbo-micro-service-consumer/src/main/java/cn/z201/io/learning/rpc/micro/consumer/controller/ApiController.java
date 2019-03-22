@@ -4,8 +4,12 @@ import cn.z201.io.api.DefaultDemoServiceI;
 import cn.z201.io.dto.PersionDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.rpc.RpcException;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.lang.reflect.UndeclaredThrowableException;
 
 /**
  * @author z201.coding@gmail.com
@@ -14,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class ApiController {
 
-    @Reference(version = "1.0.0",group = "demo")
+    @Reference(version = "1.0.0", group = "demo")
     private DefaultDemoServiceI defaultDemoService;
 
     @RequestMapping(value = "")
@@ -25,5 +29,28 @@ public class ApiController {
     @RequestMapping(value = "/consumer")
     public PersionDTO sayConsumer() {
         return defaultDemoService.sayConsumer("consumer", 12);
+    }
+
+    @RequestMapping(value = "/e")
+    public String error() {
+        String msg = "ok";
+        try {
+            defaultDemoService.error();
+        } catch (Exception e) {
+            Throwable throwable = e.getCause();
+            if (e instanceof UndeclaredThrowableException) {
+                Throwable targetEx = ((UndeclaredThrowableException) e).getUndeclaredThrowable();
+                if (targetEx != null) {
+                    if (Strings.isBlank(targetEx.getMessage())) {
+                        msg = targetEx.getCause().getMessage();
+                    }else {
+                        msg = targetEx.getMessage();
+                    }
+                }
+            } else {
+                msg = e.getMessage();
+            }
+        }
+        return msg;
     }
 }

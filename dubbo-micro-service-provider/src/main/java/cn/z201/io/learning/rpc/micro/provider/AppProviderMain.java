@@ -3,14 +3,15 @@ package cn.z201.io.learning.rpc.micro.provider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
-import java.io.IOException;
 
 /**
  * @author z201.coding@gmail.com
  **/
 @Slf4j
 @EnableAutoConfiguration
+
 public class AppProviderMain {
 
     public static void main(String[] args) {

@@ -19,6 +19,7 @@ package cn.z201.io.learning.rpc.micro.provider.service;
 import cn.z201.io.api.DefaultDemoServiceI;
 import cn.z201.io.dto.PersionDTO;
 import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.rpc.RpcException;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -49,4 +50,9 @@ public class DefaultDemoServiceImpl implements DefaultDemoServiceI {
     public PersionDTO sayConsumer(String name, Integer age) {
         return new PersionDTO(serviceName+" : "+age.toString(), new Timestamp(System.currentTimeMillis()));
 }
+
+    @Override
+    public String error()  {
+        throw new RpcException("假装一个异常");
+    }
 }
