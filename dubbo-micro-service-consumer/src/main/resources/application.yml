@@ -19,12 +19,6 @@ spring:
     restart:
       enabled: true
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
 dubbo:
   application:
     name: ${spring.name}

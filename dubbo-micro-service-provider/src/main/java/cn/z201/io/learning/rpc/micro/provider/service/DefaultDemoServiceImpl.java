@@ -17,6 +17,7 @@
 package cn.z201.io.learning.rpc.micro.provider.service;
 
 import cn.z201.io.api.DefaultDemoServiceI;
+import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Value;
 
 
@@ -27,8 +28,8 @@ import org.springframework.beans.factory.annotation.Value;
  * @see DefaultDemoServiceImpl
  * @since 2.7.0
  */
+@Service(version = "1.0.0")
 public class DefaultDemoServiceImpl implements DefaultDemoServiceI{
-
     /**
      * The default value of ${dubbo.application.name} is ${spring.application.name}
      */

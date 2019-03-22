@@ -18,7 +18,7 @@ public class ApiController {
 
     @RequestMapping(value = "")
     public String sayHello() {
-//        return defaultDemoService.sayHello("consumer");
-        return "consumer";
+        return defaultDemoService.sayHello("consumer");
+//        return "consumer";
     }
 }
