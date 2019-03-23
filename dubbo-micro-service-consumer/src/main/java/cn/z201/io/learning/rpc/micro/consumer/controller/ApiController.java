@@ -1,10 +1,10 @@
 package cn.z201.io.learning.rpc.micro.consumer.controller;
 
 import cn.z201.io.api.DefaultDemoServiceI;
+import cn.z201.io.api.DefaultEmailServiceI;
 import cn.z201.io.dto.PersionDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
-import org.apache.dubbo.rpc.RpcException;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +20,9 @@ public class ApiController {
 
     @Reference(version = "1.0.0", group = "demo")
     private DefaultDemoServiceI defaultDemoService;
+
+    @Reference(version = "1.0.0", group = "email")
+    DefaultEmailServiceI defaultEmailService;
 
     @RequestMapping(value = "")
     public String say() {
@@ -42,7 +45,7 @@ public class ApiController {
                 if (targetEx != null) {
                     if (Strings.isBlank(targetEx.getMessage())) {
                         msg = targetEx.getCause().getMessage();
-                    }else {
+                    } else {
                         msg = targetEx.getMessage();
                     }
                 }
@@ -52,4 +55,11 @@ public class ApiController {
         }
         return msg;
     }
+
+    @RequestMapping(value = "/email")
+    public String email() {
+        defaultEmailService.sendSimpleMail("int_java_se@163.com", "test email");
+        return "ok";
+    }
+
 }

@@ -1,0 +1,29 @@
+spring:
+  name: dubbo-spring-boot-provider-email
+  devtools:
+    restart:
+      enabled: true
+  mail:
+    host: 'smtp.163.com'
+    auth: true
+    username: 'z201_coding@163.com'
+    password: '0w1si8Pg28z4mLMk'
+    default-encoding: UTF-8
+mail:
+  from-mail-addr: z201_coding@163.com
+
+dubbo:
+  application:
+    name: ${spring.name}
+  scan:
+    base-packages: cn.z201.io.learning.rpc.micro.provider.service
+  protocol:
+    name: dubbo
+    port: 12346
+  registry: ## Dubbo Registry
+    address: zookeeper://127.0.0.1:2181
+    timeout: 3000
+  metadata-report:
+      address: zookeeper://127.0.0.1:2181
+
+

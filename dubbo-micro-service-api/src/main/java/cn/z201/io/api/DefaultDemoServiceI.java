@@ -22,7 +22,7 @@ import org.apache.dubbo.rpc.RpcException;
 /**
  * Demo Service interface
  *
- * @author zengqingfeng
+ * @author z201.coding@gmail.com
  * @since 2.7.0
  */
 public interface DefaultDemoServiceI {

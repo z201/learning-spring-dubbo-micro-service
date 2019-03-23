@@ -20,6 +20,7 @@
         <module>dubbo-micro-service-provider</module>
         <module>dubbo-micro-service-zookeeper</module>
         <module>dubbo-micro-service-api</module>
+        <module>dubbo-micro-service-provider-email</module>
     </modules>
 
     <dependencyManagement>
