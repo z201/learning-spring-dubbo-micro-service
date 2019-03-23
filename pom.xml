@@ -21,6 +21,7 @@
         <module>dubbo-micro-service-zookeeper</module>
         <module>dubbo-micro-service-api</module>
         <module>dubbo-micro-service-provider-email</module>
+        <module>dubbo-micro-service-mock</module>
     </modules>
 
     <dependencyManagement>

@@ -19,7 +19,7 @@ dubbo:
     base-packages: cn.z201.io.learning.rpc.micro.provider.service
   protocol:
     name: dubbo
-    port: 12346
+    port: -1
   registry: ## Dubbo Registry
     address: zookeeper://127.0.0.1:2181
     timeout: 3000

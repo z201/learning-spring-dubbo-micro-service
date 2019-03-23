@@ -19,6 +19,7 @@ spring:
     restart:
       enabled: true
 
+
 dubbo:
   application:
     name: ${spring.name}
