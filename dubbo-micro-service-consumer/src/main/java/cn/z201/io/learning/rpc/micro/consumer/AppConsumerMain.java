@@ -18,4 +18,6 @@ public class AppConsumerMain {
         SpringApplication.run(AppConsumerMain.class, args);
     }
 
+
+
 }
